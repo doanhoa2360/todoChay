@@ -41,7 +41,7 @@ export default {
 }
 .todo-item{
   display: flex;
-      padding: 5px 0;
+      padding: 10px 0;
 }
 .checkbox{
   

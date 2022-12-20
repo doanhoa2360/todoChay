@@ -2,7 +2,6 @@
   <div>
     <input class="add-input" type="text" v-model="title">
     <input class="add-btn" @click="addItem" type="submit" value="Add">
-  
   </div>
 </template>
 
@@ -11,18 +10,15 @@ import {ref} from 'vue'
 export default {
  setup(props, context) {
     const title =ref('')
-const addItem = () =>{
-  
+const addItem = () =>{ 
     const newItem ={
         id:Date.now(),
         title:title.value,
         complete:false
     }
-    console.log(context)
     context.emit('add-todo',newItem)//ham số thứ nhất là tên sự kiện do ta tự đặt, tham số thứ 2 là giá trị muốn update.
  title.value=''
 }
-
     return{
         title,
         addItem

@@ -1,8 +1,5 @@
 <template>
-
 <div class="">
-
- 
   <div v-if="todoProp.complete === true" class="comp">
     <div class="comp-item">
        {{ todoProp.title }}
@@ -11,27 +8,17 @@
         <button  @click="deleteComp" >Delete</button> 
         </div>
   </div>
- 
-
 </div>
-
 </template>
 
 <script>
-import { ref } from "vue";
-import Todo from './Todo.vue'
-export default {
-  
+export default { 
   props: ["todoProp"],
   setup(props, context) {
-   
-
     const deleteComp = () => {
       context.emit("delete-comp", props.todoProp.id);
     };
-
-    return {
-   
+   return { 
       deleteComp,
     };
   },
@@ -44,5 +31,11 @@ export default {
 }
 .comp-item{
       width: 60%;
+}
+button{
+  background-color:#ef6464;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 5px;
 }
 </style>
